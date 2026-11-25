@@ -1,0 +1,27 @@
+node_modules/
+.vercel/
+.env
+.env.*
+enquiries.json
+
+# Ignore legacy/unused scratch assets so repo only includes active website assets
+assets/*
+!assets/frames/
+!assets/frames/**
+!assets/video/
+!assets/video/**
+!assets/user_card_2_white.jpg
+!assets/gemini_grade_2_hdpe.jpg
+!assets/user_upload_2_green_bowl.jpg
+!assets/user_upload_3_red_mound.jpg
+!assets/gemini_grade_5_abs.jpg
+!assets/gemini_grade_4_pet.jpg
+!assets/tp_poly_2_pc.jpg
+!assets/gemini_grade_3_ldpe.jpg
+!assets/gemini_grade_6_pvc.jpg
+!assets/scene_a_glass_pour.jpg
+!assets/scene_bc_hopper_pour.jpg
+!assets/scene_d_barrel_cutaway.jpg
+!assets/scene_e_mold_closed_fill.jpg
+!assets/scene_fg_mold_open_eject.jpg
+!assets/scene_gh_gear_reveal.jpg

@@ -1,0 +1,14 @@
+{
+  "name": "vims-plastic-polymers",
+  "version": "1.0.0",
+  "private": true,
+  "description": "VIMS Enterprises — Real Thermoplastic Polymer Granules & Scroll-Driven Injection Molding Website (plastic.vimsenterprise.com)",
+  "main": "serve-3d.js",
+  "scripts": {
+    "start": "node serve-3d.js",
+    "dev": "node serve-3d.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

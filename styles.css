@@ -1,0 +1,1073 @@
+:root {
+  --bg-deep: #050b16;
+  --bg-panel: #091221;
+  --gold-light: #fff6d6;
+  --gold-primary: #f5d77f;
+  --gold-deep: #d4af37;
+  --pearl-white: #f8fafc;
+  --pearl-muted: #cbd5e1;
+  --accent-blue: #1d8cf8;
+  --accent-cyan: #38bdf8;
+  --nav-height: 62px;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Syne', sans-serif;
+  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-deep);
+  color: var(--pearl-white);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--bg-deep);
+  color: var(--pearl-white);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ==========================================================================
+   SLEEK MINIMAL STICKY HEADER
+   ========================================================================== */
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  z-index: 1000;
+  background: rgba(5, 11, 22, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(245, 215, 127, 0.12);
+}
+
+.nav-container {
+  max-width: 1360px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.brand-logo-wrap {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: rgba(29, 140, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vims-logo-svg {
+  width: 22px;
+  height: 22px;
+}
+
+.brand-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.96rem;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-link {
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid transparent;
+  font-family: var(--font-sans);
+  color: var(--pearl-muted);
+  text-decoration: none;
+  font-size: 0.84rem;
+  font-weight: 600;
+  padding: 6px 15px;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--gold-light);
+  background: rgba(245, 215, 127, 0.08);
+}
+
+.nav-link.active {
+  color: var(--gold-light);
+  background: rgba(212, 175, 55, 0.16);
+  border-color: rgba(245, 215, 127, 0.45);
+}
+
+/* ==========================================================================
+   FULL-SCREEN PHOTOGRAPHIC SCROLL STORY + NON-STOP HEADER POUR
+   ========================================================================== */
+.manufacturing-scroll-story {
+  position: relative;
+  height: 520vh;
+  background-color: var(--bg-deep);
+}
+
+.process-anchor-marker {
+  position: absolute;
+  top: 102vh;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+.sticky-stage-viewport {
+  position: sticky;
+  top: var(--nav-height);
+  width: 100%;
+  height: calc(100vh - var(--nav-height));
+  overflow: hidden;
+  background-color: var(--bg-deep);
+}
+
+#sequence-scroll-canvas,
+#live-continuous-pour-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#live-continuous-pour-canvas {
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Unique Two-Line Luxury Editorial Typography (Champagne Gold & Pearl) */
+.hero-two-line-copy {
+  position: absolute;
+  top: 48%;
+  left: clamp(32px, 6vw, 96px);
+  transform: translateY(-50%);
+  z-index: 15;
+  max-width: 540px;
+  pointer-events: none;
+  transition: opacity 0.32s ease, transform 0.32s ease;
+}
+
+.hero-two-line-copy.is-hidden {
+  opacity: 0;
+  transform: translateY(calc(-50% - 18px));
+}
+
+.hero-unique-line1 {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(2.35rem, 4.3vw, 3.75rem);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  background: linear-gradient(135deg, #fffdf7 0%, #f5d77f 55%, #d4af37 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 6px;
+  filter: drop-shadow(0 6px 24px rgba(0, 0, 0, 0.85));
+}
+
+.hero-unique-line2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.15rem, 2vw, 1.58rem);
+  line-height: 1.3;
+  letter-spacing: 0.03em;
+  color: #f1f5f9;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
+}
+
+/* Minimal Box-Free Side Process Caption (Scenes B–H) */
+.scene-minimal-caption {
+  position: absolute;
+  top: 46%;
+  left: clamp(32px, 5.5vw, 88px);
+  transform: translateY(-50%);
+  z-index: 16;
+  max-width: 350px;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.scene-minimal-caption[hidden] {
+  display: none !important;
+}
+
+.scene-minimal-step {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+  margin-bottom: 6px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95);
+}
+
+.scene-minimal-heading {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.85rem, 2.8vw, 2.4rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffffff 0%, #f5d77f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.12;
+  margin-bottom: 8px;
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.95));
+}
+
+.scene-minimal-desc {
+  font-size: 0.88rem;
+  color: rgba(241, 245, 249, 0.88);
+  line-height: 1.48;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95);
+}
+
+/* Interactive Process Visualization Timeline Bar at Bottom-Center */
+.process-viz-timeline {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 18;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(6, 12, 24, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(245, 215, 127, 0.22);
+  padding: 6px 12px;
+  border-radius: 999px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.viz-stage-node {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  color: rgba(203, 213, 225, 0.72);
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.viz-stage-node:hover {
+  color: #ffffff;
+}
+
+.viz-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(203, 213, 225, 0.35);
+  transition: all 0.2s ease;
+}
+
+.viz-stage-node.active {
+  color: var(--gold-light);
+  background: rgba(212, 175, 55, 0.18);
+}
+
+.viz-stage-node.active .viz-dot {
+  background: var(--gold-primary);
+  box-shadow: 0 0 10px var(--gold-primary);
+  transform: scale(1.25);
+}
+
+/* ==========================================================================
+   FAST AUTO-SLIDING NON-SQUARE (CIRCULAR / CAPSULE MEDALLION) POLYMER CARDS
+   ========================================================================== */
+.polymers-slider-section {
+  position: relative;
+  z-index: 30;
+  padding: 64px 28px 72px;
+  background: radial-gradient(circle at 50% 0%, #0d1b33 0%, #050b16 75%);
+  border-top: 1px solid rgba(245, 215, 127, 0.14);
+}
+
+.polymers-shell {
+  max-width: 1340px;
+  margin: 0 auto;
+}
+
+.polymers-topbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.polymers-eyebrow {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--gold-primary);
+  margin-bottom: 4px;
+}
+
+.polymers-heading {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffffff 0%, #f5d77f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+}
+
+.slider-nav-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.slider-circle-btn {
+  cursor: pointer;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(245, 215, 127, 0.08);
+  border: 1px solid rgba(245, 215, 127, 0.3);
+  color: var(--gold-light);
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.18s ease;
+}
+
+.slider-circle-btn:hover {
+  background: var(--gold-deep);
+  color: #050b16;
+  border-color: var(--gold-light);
+}
+
+.polymer-cards-viewport {
+  width: 100%;
+  overflow: hidden;
+  padding: 12px 0 20px;
+}
+
+.polymer-cards-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.36s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+/* Non-Square Circular / Oval Capsule Medallion Card! */
+.polymer-medallion-card {
+  flex: 0 0 calc((100% - 72px) / 4);
+  min-width: 240px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 18px 16px 22px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(16, 29, 54, 0.85) 0%, rgba(8, 15, 29, 0.92) 100%);
+  border: 1px solid rgba(245, 215, 127, 0.22);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.5);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+}
+
+.polymer-medallion-card:hover {
+  transform: translateY(-7px);
+  border-color: var(--gold-primary);
+  box-shadow: 0 22px 46px rgba(0, 0, 0, 0.7), 0 0 22px rgba(245, 215, 127, 0.18);
+}
+
+/* Circular Polymer Granule Lens Bowl */
+.medallion-circle-photo {
+  position: relative;
+  width: 196px;
+  height: 196px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(245, 215, 127, 0.42);
+  box-shadow: inset 0 0 24px rgba(0, 0, 0, 0.6), 0 10px 24px rgba(0, 0, 0, 0.5);
+  margin-bottom: 14px;
+  background: #050b16;
+  flex-shrink: 0;
+}
+
+.medallion-circle-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.polymer-medallion-card:hover .medallion-circle-photo img {
+  transform: scale(1.1);
+}
+
+/* Floating Gold Rate Pill on the Circular Medallion */
+.medallion-rate-badge {
+  margin-top: -28px;
+  z-index: 3;
+  background: linear-gradient(135deg, #f5d77f 0%, #d4af37 100%);
+  color: #050b16;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 800;
+  padding: 5px 16px;
+  border-radius: 999px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.65);
+  margin-bottom: 10px;
+}
+
+.medallion-title {
+  font-family: var(--font-serif);
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 4px;
+  padding: 0 10px;
+}
+
+.medallion-tap-hint {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--gold-primary);
+  letter-spacing: 0.04em;
+}
+
+/* ==========================================================================
+   PROPER COMPLETE FOOTER (Contact Us, Privacy Policy, Terms of Service)
+   ========================================================================== */
+.site-footer {
+  background: #030710;
+  border-top: 1px solid rgba(245, 215, 127, 0.18);
+  padding: 44px 28px 24px;
+  position: relative;
+  z-index: 35;
+}
+
+.site-footer-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 1.2fr;
+  gap: 32px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.footer-brand-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+}
+
+.footer-tagline {
+  font-size: 0.84rem;
+  color: var(--pearl-muted);
+  max-width: 300px;
+  line-height: 1.5;
+}
+
+.footer-col-links,
+.footer-col-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.footer-col-heading {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+  margin-bottom: 4px;
+}
+
+.footer-col-links a,
+.footer-action-link,
+.footer-contact-item {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--pearl-muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+  padding: 0;
+}
+
+.footer-col-links a:hover,
+.footer-action-link:hover,
+.footer-contact-item:hover {
+  color: var(--gold-light);
+}
+
+.footer-whatsapp-pill {
+  margin-top: 4px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #050b16;
+  background: linear-gradient(135deg, #f5d77f, #d4af37);
+  padding: 6px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+.site-footer-bottom {
+  max-width: 1320px;
+  margin: 18px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.78rem;
+  color: rgba(203, 213, 225, 0.65);
+}
+
+.footer-bottom-policies {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ==========================================================================
+   POLYMER DETAILS & CONTACT US MODAL + LEGAL POLICY MODAL
+   ========================================================================== */
+.polymer-modal-backdrop,
+.legal-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1500;
+  background: rgba(3, 7, 15, 0.84);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.polymer-modal-backdrop[hidden],
+.legal-modal-backdrop[hidden] {
+  display: none !important;
+}
+
+.polymer-modal-card {
+  position: relative;
+  max-width: 680px;
+  width: 100%;
+  background: #0b1528;
+  border: 1px solid rgba(245, 215, 127, 0.4);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.8);
+}
+
+.polymer-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 10;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(5, 11, 22, 0.8);
+  border: 1px solid rgba(245, 215, 127, 0.35);
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.polymer-modal-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+}
+
+.polymer-modal-img-wrap {
+  position: relative;
+  min-height: 290px;
+  background: #050b16;
+}
+
+.polymer-modal-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.modal-rate-badge {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  background: linear-gradient(135deg, #f5d77f, #d4af37);
+  color: #050b16;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 6px 16px;
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.65);
+}
+
+.polymer-modal-info {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.modal-code-pill {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--gold-primary);
+  background: rgba(245, 215, 127, 0.12);
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.modal-title {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.15;
+}
+
+.modal-desc {
+  font-size: 0.85rem;
+  color: var(--pearl-muted);
+  line-height: 1.5;
+}
+
+.modal-specs-list {
+  display: grid;
+  gap: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 10px 0;
+}
+
+.modal-spec-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.82rem;
+}
+
+.modal-spec-item span {
+  color: rgba(203, 213, 225, 0.65);
+}
+
+.modal-spec-item strong {
+  color: #ffffff;
+}
+
+.btn-modal-contact {
+  width: 100%;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #050b16;
+  background: linear-gradient(135deg, #f5d77f, #d4af37);
+  border: none;
+  padding: 11px 16px;
+  border-radius: 999px;
+}
+
+.modal-contact-reveal {
+  margin-top: 10px;
+  background: rgba(5, 11, 22, 0.82);
+  border: 1px solid rgba(245, 215, 127, 0.35);
+  border-radius: 12px;
+  padding: 10px 12px;
+  display: grid;
+  gap: 6px;
+  font-size: 0.82rem;
+}
+
+.modal-contact-reveal[hidden] {
+  display: none !important;
+}
+
+.contact-demo-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact-demo-line a {
+  color: var(--gold-primary);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.legal-modal-dialog {
+  max-width: 600px;
+  width: 100%;
+  max-height: 80vh;
+  background: #0b1528;
+  border: 1px solid rgba(245, 215, 127, 0.35);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.legal-modal-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.legal-modal-close {
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.legal-modal-body {
+  padding: 20px;
+  overflow-y: auto;
+  font-size: 0.86rem;
+  color: var(--pearl-muted);
+  line-height: 1.6;
+}
+
+.legal-modal-body h4 {
+  color: var(--gold-primary);
+  margin: 12px 0 4px;
+}
+
+/* ==========================================================================
+   TINY ROBOT TOY ICON CHATBOT LAUNCHER (44x44px)
+   ========================================================================== */
+.chatbot-root {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 1100;
+}
+
+.robot-launcher-btn {
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #162a4a, #091326);
+  border: 1.5px solid rgba(245, 215, 127, 0.65);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.7), 0 0 14px rgba(245, 215, 127, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  transition: transform 0.2s ease;
+}
+
+.robot-launcher-btn:hover {
+  transform: translateY(-2px) scale(1.06);
+}
+
+.robot-toy-svg {
+  width: 30px;
+  height: 30px;
+}
+
+.chatbot-window {
+  position: absolute;
+  right: 0;
+  bottom: 54px;
+  width: min(300px, calc(100vw - 32px));
+  height: min(390px, calc(100vh - 130px));
+  background: #0b1424;
+  border: 1px solid rgba(245, 215, 127, 0.38);
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.chatbot-window[hidden] {
+  display: none !important;
+}
+
+.chatbot-header {
+  background: linear-gradient(135deg, #10203a, #0c172a);
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chatbot-header h3 {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--gold-light);
+}
+
+.chatbot-active-product {
+  font-size: 0.68rem;
+  color: var(--pearl-muted);
+}
+
+.chatbot-close-btn {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: #ffffff;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+}
+
+.chatbot-quick-actions {
+  display: flex;
+  gap: 5px;
+  padding: 8px 10px;
+  background: rgba(5, 11, 22, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.chat-quick-chip {
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--gold-primary);
+  background: rgba(245, 215, 127, 0.1);
+  border: 1px solid rgba(245, 215, 127, 0.28);
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+.chatbot-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.chat-bubble {
+  max-width: 88%;
+  padding: 8px 11px;
+  border-radius: 10px;
+  font-size: 0.78rem;
+  line-height: 1.42;
+  white-space: pre-line;
+}
+
+.chat-bubble.bot {
+  align-self: flex-start;
+  background: rgba(20, 34, 60, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  color: var(--pearl-white);
+}
+
+.chat-bubble.user {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #f5d77f, #d4af37);
+  color: #050b16;
+  font-weight: 600;
+}
+
+.chatbot-input-bar {
+  display: flex;
+  gap: 6px;
+  padding: 8px 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: #070d18;
+}
+
+.chatbot-input-bar input {
+  flex: 1;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: #ffffff;
+  background: rgba(13, 24, 44, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 7px;
+  padding: 7px 9px;
+}
+
+.chatbot-send-btn {
+  cursor: pointer;
+  font-size: 0.82rem;
+  color: #050b16;
+  background: var(--gold-primary);
+  border: none;
+  padding: 7px 11px;
+  border-radius: 7px;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .polymer-medallion-card {
+    flex: 0 0 calc((100% - 48px) / 3);
+  }
+
+  .site-footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 820px) {
+  .polymer-medallion-card {
+    flex: 0 0 calc((100% - 24px) / 2);
+  }
+
+  .polymer-modal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-viz-timeline {
+    bottom: 12px;
+    padding: 4px 8px;
+    gap: 2px;
+  }
+
+  .viz-stage-node {
+    padding: 4px 7px;
+    font-size: 0.66rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .nav-container {
+    padding: 0 12px;
+  }
+
+  .brand-title {
+    font-size: 0.78rem;
+  }
+
+  .nav-link {
+    padding: 4px 8px;
+    font-size: 0.72rem;
+  }
+
+  .hero-two-line-copy {
+    top: auto;
+    bottom: 58px;
+    left: 16px;
+    right: 16px;
+    transform: none;
+  }
+
+  .scene-minimal-caption {
+    top: auto;
+    bottom: 58px;
+    left: 16px;
+    right: 16px;
+    transform: none;
+  }
+
+  .viz-label {
+    display: none;
+  }
+
+  .polymer-medallion-card {
+    flex: 0 0 100%;
+  }
+
+  .site-footer-inner {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}

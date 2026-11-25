@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VIMS Enterprises | Thermoplastic Polymers &amp; Injection Molding</title>
+  <meta name="description"
+    content="VIMS Enterprises — Real thermoplastic polymer granules pouring from glass into an injection molding machine, and automatic polymer raw material rate showcase." />
+  <link rel="preload" as="image" href="assets/frames/poster-desktop.webp" type="image/webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Sleek Minimal Sticky Header -->
+  <header class="top-nav" id="top-nav">
+    <div class="nav-container">
+      <a href="#home" class="brand" aria-label="VIMS Enterprises Home">
+        <div class="brand-logo-wrap">
+          <svg class="vims-logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
+            <path d="M12 22 L48 86 L60 66 L34 22 Z" fill="#1D8CF8" />
+            <path d="M38 22 L62 62 L73 44 L58 22 Z" fill="#38BDF8" />
+            <path d="M62 22 L75 42 L88 22 Z" fill="#0B7EF4" />
+          </svg>
+        </div>
+        <span class="brand-title">VIMS ENTERPRISES</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="#home" class="nav-link active" data-nav-section="home">Home</a>
+        <a href="#process" class="nav-link" data-nav-section="process">Process</a>
+        <a href="#our-materials" class="nav-link" data-nav-section="our-materials">Our Polymers</a>
+        <a href="#site-footer" class="nav-link" data-nav-section="footer">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ====================================================================
+         FULL-SCREEN PHOTOGRAPHIC SCROLL STORY + NON-STOP HEADER POURING
+         ==================================================================== -->
+    <section class="manufacturing-scroll-story" id="home"
+      aria-label="From Polymer Granules to Injection-Molded Component">
+      <div id="process" class="process-anchor-marker" aria-hidden="true"></div>
+
+      <div class="sticky-stage-viewport" id="sticky-stage-viewport">
+        <!-- Base 2D Photographic Sequence Canvas -->
+        <canvas id="sequence-scroll-canvas"
+          aria-label="Photographic sequence showing real polymer granules pouring continuously from a transparent glass container into an injection molding machine, melting inside the screw barrel, filling the mold cavity, and ejecting as a finished gear component."></canvas>
+
+        <!-- Live 60FPS Continuous Real Cylindrical Polymer Pour Overlay (Keeps pouring non-stop at the top header!) -->
+        <canvas id="live-continuous-pour-canvas" aria-hidden="true"></canvas>
+
+        <!-- Unique Two-Line Luxury Editorial Typography (Header Scene A) -->
+        <div class="hero-two-line-copy" id="hero-opening-overlay">
+          <h1 class="hero-unique-line1">Pure Polymer Granules,</h1>
+          <p class="hero-unique-line2">Molded into Engineering Precision.</p>
+        </div>
+
+        <!-- Minimal Side Process Caption + Interactive 5-Stage Process Visualization Bar (Scenes B–H) -->
+        <div class="scene-minimal-caption" id="scene-caption-overlay" aria-live="polite" hidden>
+          <span class="scene-minimal-step" id="scene-caption-kicker">STAGE 01 &bull; HOPPER FEED</span>
+          <h2 class="scene-minimal-heading" id="scene-caption-title">Granules Enter Hopper</h2>
+          <p class="scene-minimal-desc" id="scene-caption-body">
+            Real polymer granules flow directly into the stainless-steel machine hopper.
+          </p>
+        </div>
+
+        <!-- Sleek Interactive Process Visualization Timeline Pill at Bottom-Center -->
+        <div class="process-viz-timeline" id="process-viz-timeline" role="navigation"
+          aria-label="Injection Molding Process Stages">
+          <button type="button" class="viz-stage-node active" data-jump-frame="1">
+            <span class="viz-dot"></span>
+            <span class="viz-label">Glass Pour</span>
+          </button>
+          <button type="button" class="viz-stage-node" data-jump-frame="48">
+            <span class="viz-dot"></span>
+            <span class="viz-label">Hopper Feed</span>
+          </button>
+          <button type="button" class="viz-stage-node" data-jump-frame="92">
+            <span class="viz-dot"></span>
+            <span class="viz-label">Screw Melt</span>
+          </button>
+          <button type="button" class="viz-stage-node" data-jump-frame="124">
+            <span class="viz-dot"></span>
+            <span class="viz-label">Mold Inject</span>
+          </button>
+          <button type="button" class="viz-stage-node" data-jump-frame="144">
+            <span class="viz-dot"></span>
+            <span class="viz-label">Cool &amp; Open</span>
+          </button>
+          <button type="button" class="viz-stage-node" data-jump-frame="166">
+            <span class="viz-dot"></span>
+            <span class="viz-label">Part Eject</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         FAST AUTO-SLIDING NON-SQUARE (CIRCULAR / CAPSULE MEDALLION) POLYMER CARDS
+         (Moves briskly & automatically; shows Polymer Image + Rate; click for Details)
+         ==================================================================== -->
+    <section class="polymers-slider-section" id="our-materials" aria-labelledby="polymers-section-title">
+      <div class="polymers-shell">
+        <div class="polymers-topbar">
+          <div class="polymers-title-wrap">
+            <span class="polymers-eyebrow">RAW MATERIAL CATALOG</span>
+            <h2 class="polymers-heading" id="polymers-section-title">Our Polymers</h2>
+          </div>
+          <div class="slider-nav-group">
+            <button type="button" class="slider-circle-btn" id="slider-prev-btn" aria-label="Previous Polymer">
+              &#8592;
+            </button>
+            <button type="button" class="slider-circle-btn" id="slider-next-btn" aria-label="Next Polymer">
+              &#8594;
+            </button>
+          </div>
+        </div>
+
+        <!-- Fast Auto-Sliding Horizontal Track of Circular/Capsule Polymer Medallions -->
+        <div class="polymer-cards-viewport" id="polymer-cards-viewport">
+          <div class="polymer-cards-track" id="polymer-cards-track" role="list">
+            <!-- Populated dynamically in app.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====================================================================
+       PROPER COMPLETE FOOTER (Company Identity, Contact Us, Privacy Policy, Terms)
+       ==================================================================== -->
+  <footer class="site-footer" id="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-col-brand">
+        <div class="footer-logo-row">
+          <div class="brand-logo-wrap">
+            <svg class="vims-logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true">
+              <path d="M12 22 L48 86 L60 66 L34 22 Z" fill="#1D8CF8" />
+              <path d="M38 22 L62 62 L73 44 L58 22 Z" fill="#38BDF8" />
+              <path d="M62 22 L75 42 L88 22 Z" fill="#0B7EF4" />
+            </svg>
+          </div>
+          <span class="footer-brand-title">VIMS ENTERPRISES</span>
+        </div>
+        <p class="footer-tagline">
+          Industrial thermoplastic polymer granules &amp; precision injection molding solutions.
+        </p>
+      </div>
+
+      <nav class="footer-col-links" aria-label="Footer Navigation">
+        <span class="footer-col-heading">Quick Links</span>
+        <a href="#home">Home</a>
+        <a href="#process">Molding Process</a>
+        <a href="#our-materials">Our Polymers</a>
+        <button type="button" class="footer-action-link" id="footer-contact-btn">Contact Us</button>
+      </nav>
+
+      <div class="footer-col-links">
+        <span class="footer-col-heading">Legal &amp; Policies</span>
+        <button type="button" class="footer-action-link" data-legal-modal="privacy">Privacy Policy</button>
+        <button type="button" class="footer-action-link" data-legal-modal="terms">Terms of Service</button>
+      </div>
+
+      <div class="footer-col-contact">
+        <span class="footer-col-heading">Contact Us</span>
+        <a href="tel:+919940660868" class="footer-contact-item">&#9742; +91 99406 60868</a>
+        <a href="mailto:Vimal@vimsenterprise.com" class="footer-contact-item">&#9993; Vimal@vimsenterprise.com</a>
+        <a href="https://wa.me/919940660868" target="_blank" rel="noopener noreferrer" class="footer-whatsapp-pill">
+          WhatsApp Enquiry &#8599;
+        </a>
+      </div>
+    </div>
+
+    <div class="site-footer-bottom">
+      <span>&copy; 2026 VIMS Enterprises. All rights reserved.</span>
+      <div class="footer-bottom-policies">
+        <button type="button" class="footer-action-link" data-legal-modal="privacy">Privacy Policy</button>
+        <span>&bull;</span>
+        <button type="button" class="footer-action-link" data-legal-modal="terms">Terms of Service</button>
+        <span>&bull;</span>
+        <button type="button" class="footer-action-link" id="footer-bottom-contact-btn">Contact Us</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====================================================================
+       POLYMER DETAILS & CONTACT US MODAL (Opens when clicking any Polymer)
+       ==================================================================== -->
+  <div class="polymer-modal-backdrop" id="polymer-modal-backdrop" hidden>
+    <div class="polymer-modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-polymer-name">
+      <button type="button" class="polymer-modal-close" id="polymer-modal-close" aria-label="Close Details">
+        &#10005;
+      </button>
+
+      <div class="polymer-modal-grid">
+        <div class="polymer-modal-img-wrap">
+          <img id="modal-polymer-img" src="assets/user_card_2_white.jpg" alt="Polymer Granules" />
+          <span class="modal-rate-badge" id="modal-polymer-rate">&#8377;118 / kg</span>
+        </div>
+
+        <div class="polymer-modal-info">
+          <span class="modal-code-pill" id="modal-polymer-code">PP &bull; INDUSTRIAL GRADE</span>
+          <h3 class="modal-title" id="modal-polymer-name">Polypropylene (PP)</h3>
+          <p class="modal-desc" id="modal-polymer-desc">
+            High stiffness, chemical resistance, and fatigue durability for automotive, packaging, and household molded components.
+          </p>
+
+          <div class="modal-specs-list">
+            <div class="modal-spec-item">
+              <span>Grade</span>
+              <strong id="modal-polymer-grade">Virgin Injection &amp; Raffia Grade</strong>
+            </div>
+            <div class="modal-spec-item">
+              <span>Color</span>
+              <strong id="modal-polymer-color">Natural Virgin White</strong>
+            </div>
+            <div class="modal-spec-item">
+              <span>Density</span>
+              <strong id="modal-polymer-density">0.90 – 0.91 g/cm³</strong>
+            </div>
+          </div>
+
+          <div class="modal-contact-zone">
+            <button type="button" class="btn-modal-contact" id="btn-modal-contact-toggle">
+              Contact Us for Order
+            </button>
+
+            <div class="modal-contact-reveal" id="modal-contact-reveal" hidden>
+              <div class="contact-demo-line">
+                <span>Call / WhatsApp:</span>
+                <a href="tel:+919940660868">+91 99406 60868</a>
+              </div>
+              <div class="contact-demo-line">
+                <span>Sales Email:</span>
+                <a href="mailto:Vimal@vimsenterprise.com">Vimal@vimsenterprise.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       PRIVACY POLICY & TERMS OF SERVICE MODAL
+       ==================================================================== -->
+  <div class="legal-modal-backdrop" id="legal-modal-backdrop" hidden>
+    <div class="legal-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="legal-modal-title">
+      <div class="legal-modal-header">
+        <h3 id="legal-modal-title">Privacy Policy</h3>
+        <button type="button" class="legal-modal-close" id="legal-modal-close" aria-label="Close Dialog">&#10005;</button>
+      </div>
+      <div class="legal-modal-body" id="legal-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       TINY ROBOT ICON CHATBOT (Compact Cute Robot Toy Button in Bottom-Right)
+       ==================================================================== -->
+  <aside class="chatbot-root" id="polymer-chatbot" aria-label="VIMS Polymer Assistant">
+    <button type="button" class="robot-launcher-btn" id="chatbot-launcher" aria-expanded="false"
+      aria-controls="chatbot-window" title="Ask VIMS Robot Assistant">
+      <svg class="robot-toy-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true">
+        <line x1="32" y1="7" x2="32" y2="16" stroke="#F5D77F" stroke-width="3.5" stroke-linecap="round" />
+        <circle cx="32" cy="6" r="4" fill="#F5D77F" />
+        <rect x="7" y="26" width="5" height="14" rx="2.5" fill="#D4AF37" />
+        <rect x="52" y="26" width="5" height="14" rx="2.5" fill="#D4AF37" />
+        <rect x="12" y="16" width="40" height="34" rx="12" fill="url(#robotHeadGrad)" stroke="#F5D77F"
+          stroke-width="2.5" />
+        <rect x="18" y="23" width="28" height="14" rx="6" fill="#06101E" />
+        <circle cx="25" cy="30" r="3.2" fill="#38BDF8" />
+        <circle cx="39" cy="30" r="3.2" fill="#38BDF8" />
+        <circle cx="26" cy="29" r="1.1" fill="#FFFFFF" />
+        <circle cx="40" cy="29" r="1.1" fill="#FFFFFF" />
+        <path d="M26 42 C29 45, 35 45, 38 42" stroke="#F5D77F" stroke-width="2.5" stroke-linecap="round" />
+        <defs>
+          <linearGradient id="robotHeadGrad" x1="12" y1="16" x2="52" y2="50" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#1E293B" />
+            <stop offset="100%" stop-color="#0F172A" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </button>
+
+    <div class="chatbot-window" id="chatbot-window" role="dialog" aria-modal="false"
+      aria-labelledby="chatbot-title" hidden>
+      <div class="chatbot-header">
+        <div class="chatbot-header-info">
+          <h3 id="chatbot-title">VIMS Polymer Bot</h3>
+          <span class="chatbot-active-product" id="chatbot-active-product">Ask about rates &amp; grades</span>
+        </div>
+        <button type="button" class="chatbot-close-btn" id="chatbot-close-btn" aria-label="Close Assistant">
+          &#10005;
+        </button>
+      </div>
+
+      <div class="chatbot-quick-actions" role="group" aria-label="Quick Questions">
+        <button type="button" class="chat-quick-chip" data-quick-query="Find a Polymer">Polymers</button>
+        <button type="button" class="chat-quick-chip" data-quick-query="Request a Quote">Rates</button>
+        <button type="button" class="chat-quick-chip" data-quick-query="Contact Our Team">Contact</button>
+      </div>
+
+      <div class="chatbot-messages" id="chatbot-messages" role="log" aria-live="polite"></div>
+
+      <form class="chatbot-input-bar" id="chatbot-form">
+        <label for="chatbot-input" class="sr-only">Ask about polymers</label>
+        <input type="text" id="chatbot-input" placeholder="Ask about polymers or rates..." autocomplete="off" />
+        <button type="submit" class="chatbot-send-btn" id="chatbot-send-btn">&#10148;</button>
+      </form>
+    </div>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

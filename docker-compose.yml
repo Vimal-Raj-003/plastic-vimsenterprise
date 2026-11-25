@@ -1,0 +1,10 @@
+services:
+  plastic-web:
+    build: .
+    container_name: vims-plastic-web
+    restart: always
+    ports:
+      - "4500:4500"
+    environment:
+      - NODE_ENV=production
+      - PORT=4500
